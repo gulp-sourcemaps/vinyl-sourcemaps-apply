@@ -1,6 +1,6 @@
 {
   "name": "vinyl-sourcemaps-apply",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Apply a source map to a vinyl file, merging it with preexisting source maps",
   "homepage": "http://github.com/floridoo/vinyl-sourcemaps-apply",
   "repository": "git://github.com/floridoo/vinyl-sourcemaps-apply.git",
