@@ -7,9 +7,16 @@ module.exports = function applySourceMap(file, sourceMap) {
     sourceMap = JSON.parse(sourceMap);
   }
 
+  // check source map properties
   assertProperty(sourceMap, "file");
   assertProperty(sourceMap, "mappings");
   assertProperty(sourceMap, "sources");
+  
+  // fix paths if Windows style paths
+  sourceMap.file = sourceMap.file.replace(/\\/g, '/');
+  sourceMap.sources = sourceMap.sources.map(function(filePath) {
+    return filePath.replace(/\\/g, '/');
+  });
 
   if (file.sourceMap) {
     var generator = SourceMapGenerator.fromSourceMap(new SourceMapConsumer(sourceMap));
