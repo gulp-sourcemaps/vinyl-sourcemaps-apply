@@ -28,7 +28,7 @@ module.exports = function applySourceMap(file, sourceMap) {
 };
 
 function assertProperty(sourceMap, propertyName) {
-  if (!sourceMap[propertyName]) {
+  if (!sourceMap.hasOwnProperty(propertyName)) {
     var e = new Error('Source map to be applied is missing the \"' + propertyName + '\" property');
     throw e;
   }
