@@ -19,9 +19,9 @@ module.exports = function applySourceMap(file, sourceMap) {
   });
 
   if (file.sourceMap) {
-    var generator = SourceMapGenerator.fromSourceMap(new SourceMapConsumer(sourceMap));
-    generator.applySourceMap(new SourceMapConsumer(file.sourceMap));
-    file.sourceMap = JSON.parse(generator.toString());
+    var generator = SourceMapGenerator.fromSourceMap(new SourceMapConsumer(file.sourceMap));
+    generator.applySourceMap(new SourceMapConsumer(sourceMap), file.sourceMap.file);
+    file.sourceMap = generator.toJSON();
   } else {
     file.sourceMap = sourceMap;
   }
