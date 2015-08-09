@@ -17,6 +17,6 @@
   "author": "Florian Reiterer <me@florianreiterer.com>",
   "license": "ISC",
   "dependencies": {
-    "source-map": "^0.1.39"
+    "source-map": "^0.4.4"
   }
 }
